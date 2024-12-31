@@ -3,6 +3,7 @@
 	text-align: center;
 	background-color: #ffffff;
 	padding: 12px;
+	box-sizing: border-box;
 }
 
 .footer a {
