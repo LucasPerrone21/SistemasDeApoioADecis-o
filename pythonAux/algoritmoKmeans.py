@@ -1,8 +1,6 @@
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 
 def optimal_number_of_clusters(file_name, sheet_name, max_clusters=10):

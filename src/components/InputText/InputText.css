@@ -1,0 +1,16 @@
+.inputText {
+	display: flex;
+	flex-direction: column;
+}
+
+.inputText label {
+	font-size: 16px;
+	margin-bottom: 8px;
+}
+
+.inputText input {
+	padding: 16px 12px;
+	border-radius: 8px;
+	border: 1px solid var(--primary-gray);
+	outline: none;
+}
