@@ -1,4 +1,5 @@
 .inputText {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -11,6 +12,6 @@
 .inputText input {
 	padding: 16px 12px;
 	border-radius: 8px;
-	border: 1px solid var(--primary-gray);
+	border: 1px solid var(--secondary-gray);
 	outline: none;
 }

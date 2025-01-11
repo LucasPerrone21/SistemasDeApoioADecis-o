@@ -7,6 +7,7 @@ interface InputTextProps {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
   type?: string;
+  formatter?: (value: string) => string;
 }
 
 export default function InputText ({ label, placeholder = "", inputId, onChange, value = "", type = "text" }: InputTextProps) {

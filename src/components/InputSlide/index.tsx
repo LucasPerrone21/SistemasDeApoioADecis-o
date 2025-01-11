@@ -9,16 +9,17 @@ interface InputSlideProps {
     max?: string;
     step?: string;
     desc?: string;
+    formatter?: null | ((value: string) => string);
 }
 
-export default function InputSlide({ label, inputId, onChange, value = "", min, max, desc }: InputSlideProps): JSX.Element {
+export default function InputSlide({ label, inputId, onChange, value = "", min, max, desc, formatter=null }: InputSlideProps): JSX.Element {
     return (
         <div className='inputSlide'>
             <div>
             <label htmlFor={inputId}>
                 {label}
             </label>
-            <span>{`${min} - ${max}`}</span>
+            <span>{formatter === null ? `${min} | ${max}` : formatter(value)}</span>
             </div>
             <input
                 id={inputId}
