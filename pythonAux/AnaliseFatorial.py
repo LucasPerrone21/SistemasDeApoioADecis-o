@@ -3,7 +3,7 @@ from sklearn.decomposition import FactorAnalysis
 import numpy as np
 
 # Carregar os dados
-df = pd.read_excel('../Banco de Dados.xlsx',  sheet_name='SemOutlier')
+df = pd.read_excel('../Banco de Dados.xlsx',  sheet_name='PlanilhaTestes')
 
 # Selecionar as colunas numéricas para a análise
 df_numerico = df.select_dtypes(include=[np.number])

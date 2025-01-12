@@ -20,7 +20,7 @@ export default function InputText ({ label, placeholder = "", inputId, onChange,
                 id={inputId}
                 type={type}
                 placeholder={placeholder}
-                value={value}
+                value={value} 
                 onChange={onChange}
               />
               <span className="errorMessage"></span>

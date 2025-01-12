@@ -5,24 +5,12 @@ import InputSlide from '../InputSlide'
 import SelectOption from '../SelectOption'
 import InputNumber from '../InputNumber'
 import FormButton from '../FormButton'
+import Answers from '../../interfaces/FormAnswsers'
+import FormController from '../../controllers/FormController'
 
 
 
 export default function Form () {
-
-    
-    function handleSubmit(e: React.FormEvent) {
-        e.preventDefault()
-        console.log(`Salário: ${salary}`)
-        console.log(`Valor do carro: ${carValue}`)
-        console.log(`Esportividade: ${carSportiness}`)
-        console.log(`Idade do carro: ${carAge}`)
-        console.log(`Tipo de carro: ${carSize}`)
-        console.log(`Assentos: ${carSeats}`)
-        console.log(`Km diários: ${dailyKm}`)
-    }
-
-
 
     const [salary, setSalary] = useState("")
     const [carValue, setCarValue] = useState("")
@@ -32,11 +20,22 @@ export default function Form () {
     const [carSeats, setCarSeats] = useState("2")
     const [dailyKm, setDailyKm] = useState("")
 
+
+    const answers : Answers = {
+        salary,
+        carValue,
+        carSportiness,
+        carAge,
+        carSize,
+        carSeats,
+        dailyKm
+    }
+
     const carSizes = ['Espaçoso', 'Médio', 'Compacto']
 
     return (
         <main className='principal'>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={(e) => FormController(e, answers)}>
                 <h1>Descubra seu futuro <span>AUDI</span></h1>
                 <InputText label="Qual sua renda mensal?" placeholder='R$ 6.000,00' inputId="salary" type="text" onChange={(e) => setSalary(e.target.value)} value={salary} />
                 <InputSlide label="Valor disponível para o veículo" inputId="carValue" min="10000" max="2000000" onChange={(e) => setCarValue(e.target.value)} value={carValue} desc='Coloque o valor de sua preferência' formatter={moneyFormatter}/>

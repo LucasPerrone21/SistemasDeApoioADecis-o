@@ -8,7 +8,7 @@ def optimal_number_of_clusters(file_name, sheet_name, max_clusters=10):
     df = pd.read_excel(file_name, sheet_name=sheet_name)
     
     # Selecionar as colunas independentes para clustering
-    features = ['Valor',	'Potência do Veículo',	'Idade do Veículo',	'IPVA',	'Ocupantes',	'Torque kgf.m',	'Tamanho m²',	'0 - 100 km/h',	'Autonomia média']
+    features = ['Valor','Potência do Veículo','Idade do Veículo','IPVA','Ocupantes','Tamanho m²','Autonomia média']
     
     data = df[features]
     
@@ -37,7 +37,8 @@ def kmeans_clustering(file_name, sheet_name, n_clusters=3):
     df = pd.read_excel(file_name, sheet_name=sheet_name)
     
     # Selecionar as colunas independentes para clustering
-    features = ['Valor',	'Potência do Veículo',	'Idade do Veículo',	'IPVA',	'Ocupantes',	'Torque kgf.m',	'Tamanho m²',	'0 - 100 km/h',	'Autonomia média']
+    features = ['Valor','Potência do Veículo','Idade do Veículo','IPVA','Ocupantes','Tamanho m²','Autonomia média']
+
     data = df[features]
     
     # Normalizar os dados
@@ -60,7 +61,7 @@ def kmeans_clustering(file_name, sheet_name, n_clusters=3):
 
 # Exemplo de uso
 file_name ='../Banco de Dados.xlsx'
-sheet_name = 'SemOutlier'
+sheet_name = 'PlanilhaTestes'
 n_clusters = optimal_number_of_clusters(file_name, sheet_name)
 #n_clusters = 4
 print(f'Número ótimo de clusters: {n_clusters}')
