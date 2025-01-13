@@ -1,5 +1,6 @@
 import Answers from '../interfaces/FormAnswsers.tsx';
 import calculateScore from '../helpers/CalculateScore.tsx';
+import database from '../database/database.tsx';
 
 
 export default function FormController(e : React.FormEvent, answers : Answers): void {
@@ -9,4 +10,5 @@ export default function FormController(e : React.FormEvent, answers : Answers): 
     
 
     console.log(score)
+    console.log(database)
 }
