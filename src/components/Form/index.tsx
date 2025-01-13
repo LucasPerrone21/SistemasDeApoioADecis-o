@@ -13,9 +13,9 @@ import FormController from '../../controllers/FormController'
 export default function Form () {
 
     const [salary, setSalary] = useState("")
-    const [carValue, setCarValue] = useState("")
-    const [carSportiness, setCarSportiness] = useState("")
-    const [carAge, setCarAge] = useState("")
+    const [carValue, setCarValue] = useState("16274")
+    const [carSportiness, setCarSportiness] = useState("125")
+    const [carAge, setCarAge] = useState("0")
     const [carSize, setCarSize] = useState("Espaçoso")
     const [carSeats, setCarSeats] = useState("2")
     const [dailyKm, setDailyKm] = useState("")
@@ -38,12 +38,11 @@ export default function Form () {
             <form className="form" onSubmit={(e) => FormController(e, answers)}>
                 <h1>Descubra seu futuro <span>AUDI</span></h1>
                 <InputText label="Qual sua renda mensal?" placeholder='R$ 6.000,00' inputId="salary" type="text" onChange={(e) => setSalary(e.target.value)} value={salary} />
-                <InputSlide label="Valor disponível para o veículo" inputId="carValue" min="10000" max="2000000" onChange={(e) => setCarValue(e.target.value)} value={carValue} desc='Coloque o valor de sua preferência' formatter={moneyFormatter}/>
-                <InputSlide label="Nivel de Esportividade" inputId="carSportiness" min="1" max="80" onChange={(e) => setCarSportiness(e.target.value)} value={carSportiness} desc='Selecione o nível de esportividade escolhido'/>
+                <InputSlide label="Valor disponível para o veículo" inputId="carValue" min="16274" max="1316125" onChange={(e) => setCarValue(e.target.value)} value={carValue} desc='Coloque o valor de sua preferência' formatter={moneyFormatter}/>
+                <InputSlide label="Nivel de Esportividade" inputId="carSportiness" min="125" max="630" shower="Civil - Hipercarro" onChange={(e) => setCarSportiness(e.target.value)} value={carSportiness} desc='Selecione o nível de esportividade escolhido'/>
                 <InputSlide label="Idade Máxima" inputId="carAge" min="0" max="30" onChange={(e) => setCarAge(e.target.value)} value={carAge} desc='Idade máxima do veículo' formatter={ageFormatter}/>
                 <div style={{display: 'flex', gap: '20px'}}>
                     <SelectOption label="Tipo de Veículo" inputId="carSize" value={carSize} onChange={(e) => {
-                        console.log(e.target.value)
                         setCarSize(e.target.value) 
                         }}  options={carSizes}/>
                     <InputNumber label="Quantidade de assentos" inputId='carSeats' onChange={(e) => setCarSeats(e.target.value)} value={carSeats}/>
